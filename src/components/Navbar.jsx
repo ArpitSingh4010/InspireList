@@ -10,7 +10,7 @@ const Navbar = () => {
         ? "flex justify-between items-center bg-[#181f3a] bg-opacity-90 shadow-lg text-blue-100 py-3 px-6 border-b-2 border-blue-900 relative z-10"
         : "flex justify-between items-center bg-white bg-opacity-90 shadow-lg text-violet-900 py-3 px-6 border-b-2 border-violet-200 relative z-10"
     }>
-      <div className="logo flex items-center gap-2 ">
+      <div className="logo flex items-center gap-2">
         <span className={darkMode ? 'font-extrabold text-2xl tracking-wider text-fuchsia-400 drop-shadow' : 'font-extrabold text-2xl tracking-wider text-violet-700 drop-shadow'}>🌠 InspireList</span>
       </div>
       <ul className="flex gap-8 items-center">
