@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import App, { ThemeContext } from './App.jsx'
 import Home from './components/Home.jsx'
+
 function MainRouter() {
   const [darkMode, setDarkMode] = useState(false)
   return (
