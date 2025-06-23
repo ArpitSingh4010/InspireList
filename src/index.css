@@ -1,22 +1,293 @@
-@import "tailwindcss";Add commentMore actions
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-@layer utilities {
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradientMove 8s ease-in-out infinite;
+body {
+  font-family: system-ui, sans-serif;
+  background: #f9fafb;
+  color: #111827;
+  min-height: 100vh;
+}
+
+/* Utility: Animate gradient background */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
   }
-  @keyframes gradientMove {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+/* Example utility classes to replace Tailwind */
+.text-center {
+  text-align: center;
+}
+.font-bold {
+  font-weight: bold;
+}
+.p-4 {
+  padding: 1rem;
+}
+.m-2 {
+  margin: 0.5rem;
+}
+.rounded {
+  border-radius: 0.5rem;
+}
+.bg-blue-500 {
+  background-color: #3b82f6;
+  color: #fff;
+}
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+}
+
+/* Layout and background classes */
+.dark-bg {
+  background: #0a1026;
+}
+.light-bg {
+  background: linear-gradient(135deg, #dbeafe, #fae8ff, #ede9fe);
+}
+
+/* Container and card classes */
+.md-container {
+  max-width: 600px;
+}
+.md-mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+.shadow-2xl {
+  box-shadow: 0 10px 25px 0 rgba(0,0,0,0.15), 0 4px 6px 0 rgba(0,0,0,0.10);
+}
+.p-8 {
+  padding: 2rem;
+}
+.min-h-80vh {
+  min-height: 80vh;
+}
+.md-w-35p {
+  width: 35%;
+}
+.border-blue900 {
+  border-color: #1e3a8a;
+}
+.bg-dark {
+  background: #181f3a;
+}
+.border-violet200 {
+  border-color: #e9d5ff;
+}
+.bg-white {
+  background: #fff;
+}
+
+/* AddTodo and flex utilities */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+
+/* Input and button utilities */
+.w-full {
+  width: 100%;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.bg-dark80 {
+  background: rgba(24, 31, 58, 0.8);
+}
+.bg-white80 {
+  background: rgba(255,255,255,0.8);
+}
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+}
+.border-violet100 {
+  border-color: #f3e8ff;
+}
+
+/* Divider and text utilities */
+.divider-blue {
+  height: 1px;
+  background: #60a5fa;
+  opacity: 0.3;
+  width: 90%;
+  margin: 1rem auto;
+}
+.divider-violet {
+  height: 1px;
+  background: #a78bfa;
+  opacity: 0.3;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+/* Gradient text and backgrounds */
+.gradient-text {
+  background: linear-gradient(90deg, #f472b6, #60a5fa, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.bg-gradient {
+  background: linear-gradient(90deg, #a21caf, #2563eb, #7c3aed);
+}
+
+/* Navbar classes */
+.dark-navbar {
+  background: #181f3a;
+  color: #dbeafe;
+  box-shadow: 0 2px 8px 0 rgba(30,58,138,0.15);
+  border-bottom: 2px solid #1e3a8a;
+  position: relative;
+  z-index: 10;
+}
+.light-navbar {
+  background: #fff;
+  color: #6d28d9;
+  box-shadow: 0 2px 8px 0 rgba(168,139,250,0.15);
+  border-bottom: 2px solid #e9d5ff;
+  position: relative;
+  z-index: 10;
+}
+.bg-dark2 {
+  background: #232b4a;
+}
+.bg-violet100 {
+  background: #f3e8ff;
+}
+.text-blue100 {
+  color: #dbeafe;
+}
+.text-blue200 {
+  color: #bfdbfe;
+}
+.text-blue400 {
+  color: #60a5fa;
+}
+.text-violet900 {
+  color: #4c1d95;
+}
+.text-violet700 {
+  color: #7c3aed;
+}
+.text-violet800 {
+  color: #5b21b6;
+}
+.text-violet400 {
+  color: #a78bfa;
+}
+.text-fuchsia400 {
+  color: #e879f9;
+}
+.text-fuchsia600 {
+  color: #c026d3;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+.font-bold {
+  font-weight: bold;
+}
+.font-medium {
+  font-weight: 500;
+}
+.text-center {
+  text-align: center;
+}
+.text-2xl {
+  font-size: 1.5rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+}
+.text-5xl {
+  font-size: 3rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+.m-5 {
+  margin: 1.25rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.shadow-md {
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.08);
+}
+.shadow-lg {
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.12);
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+.line-through {
+  text-decoration: line-through;
+}
+.italic {
+  font-style: italic;
+}
+/* Add more as needed for your project */
