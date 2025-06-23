@@ -147,17 +147,17 @@ function App() {
              <label className={darkMode ? 'mx-2 text-blue200 font-medium' : 'mx-2 text-violet700 font-medium'} htmlFor="show">Show Completed Inspirations</label> 
              <div className={darkMode ? 'divider-blue' : 'divider-violet'}></div>
              <h2 className={darkMode ? 'text-2xl font-bold text-blue200 mb-2' : 'text-2xl font-bold text-violet800 mb-2'}>Your Inspirations</h2>
-             <div className="todos">
+             <div className="todos todo-list">
               {(todos.filter(item => showFinished || !item.isCompleted).length === 0) && <div className={darkMode ? 'm-5 text-blue400 italic' : 'm-5 text-violet400 italic'}>No Inspirations to display</div> }
               {todos.map(item=>{
-              return (showFinished || !item.isCompleted) && <div key={item.id} className={darkMode ? "todo flex my-3 justify-between items-center bg-dark80 rounded-xl px-4 py-2 shadow-sm border border-blue900 hover-shadow-lg transition-all duration-200" : "todo flex my-3 justify-between items-center bg-white80 rounded-xl px-4 py-2 shadow-sm border border-violet100 hover-shadow-lg transition-all duration-200"}>
+              return (showFinished || !item.isCompleted) && <div key={item.id} className={darkMode ? "todo flex my-4 justify-between items-center bg-dark80 rounded-xl px-5 py-4 shadow-md border border-blue900 hover-shadow-lg transition-all duration-200" : "todo flex my-4 justify-between items-center bg-white80 rounded-xl px-5 py-4 shadow-md border border-violet100 hover-shadow-lg transition-all duration-200"}>
                 <div className='flex gap-5 items-center'> 
                 <input name={item.id} onChange={handleCheckbox} type="checkbox" checked={item.isCompleted} id="" className={darkMode ? "accent-fuchsia400 scale-125" : "accent-fuchsia600 scale-125"} />
                 <div className={item.isCompleted ? (darkMode ? "line-through text-blue400" : "line-through text-violet400") : (darkMode ? "text-blue100 font-medium" : "text-violet900 font-medium")}>{item.todo}</div>
                 </div>
-                <div className="buttons flex h-full gap-1">
-                  <button onClick={(e)=>handleEdit(e, item.id)} className={darkMode ? 'bg-gradient p-2 py-1 text-sm font-bold text-white rounded-md shadow transition-all duration-200' : 'bg-gradient p-2 py-1 text-sm font-bold text-white rounded-md shadow transition-all duration-200'}>Edit</button>
-                  <button onClick={(e)=>{handleDelete(e, item.id)}} className={darkMode ? 'bg-gradient p-2 py-1 text-sm font-bold text-white rounded-md shadow transition-all duration-200' : 'bg-gradient p-2 py-1 text-sm font-bold text-white rounded-md shadow transition-all duration-200'}>Delete</button>
+                <div className="buttons flex h-full gap-2">
+                  <button onClick={(e)=>handleEdit(e, item.id)} className={darkMode ? 'edit-btn dark' : 'edit-btn light'}><FaEdit /></button>
+                  <button onClick={(e)=>{handleDelete(e, item.id)}} className={darkMode ? 'delete-btn dark' : 'delete-btn light'}><AiFillDelete /></button>
                 </div> 
               </div>
               })}

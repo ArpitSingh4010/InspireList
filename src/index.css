@@ -67,7 +67,8 @@ body {
 
 /* Container and card classes */
 .md-container {
-  max-width: 600px;
+  max-width: 900px;
+  width: 100%;
 }
 .md-mx-auto {
   margin-left: auto;
@@ -86,11 +87,15 @@ body {
 .p-8 {
   padding: 2rem;
 }
+.min-h-screen {
+  min-height: 100vh;
+}
 .min-h-80vh {
   min-height: 80vh;
 }
 .md-w-35p {
-  width: 35%;
+  width: 60%;
+  min-width: 320px;
 }
 .border-blue900 {
   border-color: #1e3a8a;
@@ -105,22 +110,31 @@ body {
   background: #fff;
 }
 
-/* AddTodo and flex utilities */
+/* Flex utilities */
+.flex {
+  display: flex;
+}
 .flex-col {
   display: flex;
   flex-direction: column;
 }
-.gap-4 {
-  gap: 1rem;
-}
-.flex {
-  display: flex;
-}
 .items-center {
   align-items: center;
 }
+.justify-center {
+  justify-content: center;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
 .gap-2 {
   gap: 0.5rem;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-5 {
+  gap: 1.25rem;
 }
 
 /* Input and button utilities */
@@ -180,114 +194,294 @@ body {
 }
 
 /* Navbar classes */
+.navbar {
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
+  border-radius: 0 0 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .dark-navbar {
   background: #181f3a;
-  color: #dbeafe;
-  box-shadow: 0 2px 8px 0 rgba(30,58,138,0.15);
-  border-bottom: 2px solid #1e3a8a;
-  position: relative;
-  z-index: 10;
+  color: #e879f9;
+  border-bottom: 2px solid #a21caf;
 }
 .light-navbar {
   background: #fff;
-  color: #6d28d9;
-  box-shadow: 0 2px 8px 0 rgba(168,139,250,0.15);
-  border-bottom: 2px solid #e9d5ff;
-  position: relative;
-  z-index: 10;
-}
-.bg-dark2 {
-  background: #232b4a;
-}
-.bg-violet100 {
-  background: #f3e8ff;
-}
-.text-blue100 {
-  color: #dbeafe;
-}
-.text-blue200 {
-  color: #bfdbfe;
-}
-.text-blue400 {
-  color: #60a5fa;
-}
-.text-violet900 {
-  color: #4c1d95;
-}
-.text-violet700 {
   color: #7c3aed;
+  border-bottom: 2px solid #a78bfa;
 }
-.text-violet800 {
-  color: #5b21b6;
+.logo span {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
 }
-.text-violet400 {
-  color: #a78bfa;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
-.text-fuchsia400 {
+.nav-link {
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.08rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+.nav-link.dark {
+  color: #dbeafe;
+  background: transparent;
+}
+.nav-link.dark:hover {
+  background: #232b4a;
   color: #e879f9;
 }
-.text-fuchsia600 {
-  color: #c026d3;
+.nav-link.light {
+  color: #7c3aed;
+  background: transparent;
 }
-.font-extrabold {
-  font-weight: 800;
+.nav-link.light:hover {
+  background: #f3e8ff;
+  color: #a21caf;
 }
-.font-bold {
-  font-weight: bold;
+.toggle-btn {
+  margin-left: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
 }
-.font-medium {
-  font-weight: 500;
+.toggle-btn.dark {
+  background: #232b4a;
+  color: #e879f9;
 }
-.text-center {
-  text-align: center;
+.toggle-btn.dark:hover {
+  background: #e879f9;
+  color: #232b4a;
 }
-.text-2xl {
-  font-size: 1.5rem;
+.toggle-btn.light {
+  background: #f3e8ff;
+  color: #7c3aed;
 }
-.text-4xl {
-  font-size: 2.25rem;
+.toggle-btn.light:hover {
+  background: #a21caf;
+  color: #fff;
 }
-.text-5xl {
-  font-size: 3rem;
+
+/* Sharper, spaced navbar */
+.sharp-navbar {
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
+  border-radius: 0 0 2rem 2rem;
+  padding: 1.2rem 3rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
-.mb-6 {
-  margin-bottom: 1.5rem;
+
+/* Home page single color button */
+.home-btn {
+  padding: 0.75rem 2.5rem;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
 }
-.mb-8 {
-  margin-bottom: 2rem;
+.home-btn.dark {
+  background: #a21caf;
+  color: #fff;
 }
-.my-7 {
-  margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
-}
-.m-5 {
-  margin: 1.25rem;
-}
-.p-4 {
-  padding: 1rem;
-}
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-.rounded-md {
-  border-radius: 0.375rem;
-}
-.shadow-md {
-  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.08);
-}
-.shadow-lg {
-  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.12);
-}
-.hover-scale:hover {
+.home-btn.dark:hover {
+  background: #e879f9;
+  color: #232b4a;
   transform: scale(1.05);
 }
-.line-through {
-  text-decoration: line-through;
+.home-btn.light {
+  background: #a21caf;
+  color: #fff;
 }
-.italic {
-  font-style: italic;
+.home-btn.light:hover {
+  background: #7c3aed;
+  color: #fff;
+  transform: scale(1.05);
 }
+
+/* Home page vertical spacing */
+.home-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  width: 100vw;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3e8ff 0%, #e0e7ff 100%);
+}
+.home-main.dark-bg {
+  background: linear-gradient(135deg, #181f3a 0%, #a21caf 100%);
+}
+.home-main.light-bg {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e0e7ff 100%);
+}
+
+/* Todo list improvements */
+.todo-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.todo {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  border: 1.5px solid #e9d5ff;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.todo .buttons {
+  display: flex;
+  gap: 1rem;
+}
+.edit-btn, .delete-btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.15s;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+  margin-left: 0.2rem;
+}
+.edit-btn.light {
+  background: #a21caf;
+  color: #fff;
+}
+.edit-btn.light:hover {
+  background: #7c3aed;
+}
+.delete-btn.light {
+  background: #fff0f3;
+  color: #a21caf;
+}
+.delete-btn.light:hover {
+  background: #f43f5e;
+  color: #fff;
+}
+.edit-btn.dark {
+  background: #e879f9;
+  color: #232b4a;
+}
+.edit-btn.dark:hover {
+  background: #a21caf;
+  color: #fff;
+}
+.delete-btn.dark {
+  background: #232b4a;
+  color: #e879f9;
+}
+.delete-btn.dark:hover {
+  background: #f43f5e;
+  color: #fff;
+}
+.todo.bg-dark80 {
+  background: #232b4a;
+  color: #e879f9;
+  border: 1.5px solid #a21caf;
+}
+.todo.bg-white80 {
+  background: #fff;
+  color: #7c3aed;
+  border: 1.5px solid #e9d5ff;
+}
+.todo .line-through {
+  opacity: 0.7;
+}
+
+/* Fix dark mode text visibility */
+.text-blue100, .text-blue200, .text-blue400, .text-fuchsia400 {
+  color: #e879f9 !important;
+}
+.text-violet900, .text-violet800, .text-violet700, .text-violet400 {
+  color: #a21caf !important;
+}
+.bg-dark, .bg-dark80 {
+  color: #e879f9;
+}
+
 /* Add more as needed for your project */
+.addTodo input[type="text"] {
+  font-size: 1.15rem;
+  padding: 1.1rem 2rem;
+  border-radius: 2rem;
+  width: 100%;
+  margin-right: 1rem;
+  background: #fff;
+  border: 2px solid #a21caf;
+  color: #232b4a;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.addTodo input[type="text"]:focus {
+  border: 2px solid #e879f9;
+  outline: none;
+  box-shadow: 0 4px 16px 0 rgba(162,28,175,0.10);
+}
+.addTodo button {
+  font-size: 1.1rem;
+  padding: 1.1rem 2.2rem;
+  border-radius: 2rem;
+  margin-left: 0.5rem;
+  font-weight: 700;
+  background: #a21caf;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.addTodo button:hover:enabled {
+  background: #e879f9;
+  color: #232b4a;
+  transform: scale(1.05);
+}
+.addTodo button:disabled {
+  background: #e5e7eb;
+  color: #a1a1aa;
+  cursor: not-allowed;
+}
+@media (max-width: 1000px) {
+  .md-container, .md-w-35p {
+    width: 95%;
+    max-width: 98vw;
+  }
+}

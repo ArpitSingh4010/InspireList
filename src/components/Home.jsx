@@ -32,7 +32,11 @@ const Home = () => {
   const darkMode = theme?.darkMode ?? false;
   return (
     <ErrorBoundary>
-      <div className={darkMode ? "relative flex-col items-center justify-center min-h-screen overflow-hidden dark-bg" : "relative flex-col items-center justify-center min-h-screen overflow-hidden light-bg"}>
+      <div className={
+        (darkMode
+          ? "home-main relative flex-col items-center justify-center min-h-screen overflow-hidden dark-bg"
+          : "home-main relative flex-col items-center justify-center min-h-screen overflow-hidden light-bg")
+      }>
         {/* Moving Stars Background (only in dark mode) */}
         {darkMode && (
           <div className="absolute inset-0 pointer-events-none">
@@ -67,7 +71,7 @@ const Home = () => {
         </h1>
         <p className={darkMode ? "text-lg mb-8 text-blue100" : "text-lg mb-8 text-violet700"}>Let your inspirations shine bright. Start your journey now.</p>
         <Link to="/app">
-          <button className={darkMode ? "px-8 py-3 rounded-full bg-gradient text-white font-bold shadow-lg hover-scale" : "px-8 py-3 rounded-full bg-gradient text-white font-bold shadow-lg hover-scale"}>
+          <button className={darkMode ? "home-btn dark" : "home-btn light"}>
             Start Inspiring Yourself
           </button>
         </Link>
