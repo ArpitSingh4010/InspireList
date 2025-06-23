@@ -485,3 +485,65 @@ body {
     max-width: 98vw;
   }
 }
+@media (max-width: 700px) {
+  .navbar, .sharp-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .nav-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .logo span {
+    font-size: 1.3rem;
+  }
+  .nav-link, .toggle-btn {
+    font-size: 0.98rem;
+    padding: 0.5rem 1rem;
+  }
+  .md-container, .md-w-35p {
+    width: 99vw;
+    max-width: 99vw;
+    min-width: 0;
+    padding: 0.5rem;
+  }
+  .todo {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0.7rem;
+    gap: 0.7rem;
+  }
+  .addTodo input[type="text"] {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  .addTodo button {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .home-main {
+    padding: 1rem 0.2rem;
+    gap: 1.2rem;
+  }
+  h1, .text-5xl {
+    font-size: 2rem !important;
+  }
+}
+@media (max-width: 400px) {
+  .navbar, .sharp-navbar {
+    padding: 0.5rem 0.2rem;
+  }
+  .addTodo input[type="text"] {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.5rem;
+  }
+  .addTodo button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.7rem;
+  }
+}
